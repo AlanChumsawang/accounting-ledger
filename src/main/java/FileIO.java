@@ -13,9 +13,9 @@ public class FileIO {
                 String time = transactionInfo[1];
                 String description = transactionInfo[2];
                 String vendor = transactionInfo[3];
-                String amount = transactionInfo[4];
-                // Transaction transaction = new Transaction(date, time, description, vendor, amount);
-                // TransactionManager.addTransaction(transaction);
+                double amount = Double.parseDouble(transactionInfo[4]);
+                Transaction transaction = new Transaction(date, time, description, vendor, amount);
+                TransactionManager.addTransaction(transaction);
             }
 
         }

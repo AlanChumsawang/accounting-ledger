@@ -10,10 +10,10 @@ public class MainMenu {
         while (!done) {
             switch (userChoice) {
                 case "D":
-                    //addDeposit();
+                    TransactionManager.addDeposit(scanner);
                     break;
                 case "P":
-                    //makePayment();
+
                     break;
                 case "L":
                     //ledger();

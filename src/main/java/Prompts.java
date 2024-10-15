@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Prompts {
     static String Logo = """
              __  __                          \s
