@@ -1,3 +1,5 @@
+package com.pluralsight.accountingledger;
+
 import java.io.*;
 
 public class FileIO {
@@ -24,11 +26,17 @@ public class FileIO {
         }
     }
 
-    public static void writeToCSV(String filename) {
+    public static void writeToCSV(Transaction transaction) {
         // Write to CSV
         try {
-            FileWriter fileWriter = new FileWriter("transactions.csv");
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            FileWriter fileWriter = new FileWriter("src/main/resources/transactions.csv", true);
+            BufferedWriter bufWriter = new BufferedWriter(fileWriter);
+
+            bufWriter.write(
+                    transaction.getDate() + " | " + transaction.getTime() + " | " +
+                            transaction.getDescription() + " | " + transaction.getVendor() + " | " +
+                            transaction.getAmount() + "\n");
+            bufWriter.close();
         } catch (IOException e) {
             System.out.println("File not found");
         }

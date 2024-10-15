@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package com.pluralsight.accountingledger;
 
 public class Prompts {
     static String Logo = """
@@ -18,7 +18,7 @@ public class Prompts {
             """;
     static String mainMenu = """
             D) Add Deposit
-            P) Make Payment
+            P) Make Payment(Debit)
             L) Ledger
             X) Exit
             Choose an option: 

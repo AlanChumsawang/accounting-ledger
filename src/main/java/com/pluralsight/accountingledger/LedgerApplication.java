@@ -1,3 +1,5 @@
+package com.pluralsight.accountingledger;
+
 import java.util.Scanner;
 
 public class LedgerApplication {

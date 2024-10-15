@@ -1,3 +1,5 @@
+package com.pluralsight.accountingledger;
+
 public class Transaction {
     private final String date;
     private final String time;

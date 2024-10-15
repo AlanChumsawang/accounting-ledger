@@ -1,3 +1,5 @@
+package com.pluralsight.accountingledger;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDateTime;
@@ -21,6 +23,7 @@ public class TransactionManager {
         scanner.nextLine();
         Transaction transaction = new Transaction(date, transactionTime, description, vendor, amount);
         transactions.add(transaction);
+        FileIO.writeToCSV(transaction);
     }
 
 
