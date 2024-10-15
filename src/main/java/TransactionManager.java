@@ -38,4 +38,10 @@ public class TransactionManager {
         Transaction transaction = new Transaction(date, time, description, vendor, amount);
         transactions.add(transaction);
     }
+
+    public static void getAllTransactions() {
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction.getDate() + " " + transaction.getTime() + " " + transaction.getDescription() + " " + transaction.getVendor() + " " + transaction.getAmount());
+        }
+    }
 }
