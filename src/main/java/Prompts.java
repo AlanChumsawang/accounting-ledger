@@ -19,10 +19,15 @@ public class Prompts {
             P) Make Payment
             L) Ledger
             X) Exit
+            Choose an option: 
             """;
-    
 
+    public static String getLogo() {
+        return Logo;
+    }
 
-
+    public static String getMainMenu() {
+        return mainMenu;
+    }
 }
 
