@@ -1,7 +1,8 @@
 package com.pluralsight.accountingledger;
 
 public class Prompts {
-    static String Logo = """
+
+    static String mainMenu = """
              __  __                          \s
             |  \\/  |_   _                    \s
             | |\\/| | | | |                   \s
@@ -14,22 +15,44 @@ public class Prompts {
             |_____\\___|\\__,_|\\__, |\\___|_|   \s
                              |___/           \s
             
-            
-            """;
-    static String mainMenu = """
             D) Add Deposit
             P) Make Payment(Debit)
             L) Ledger
             X) Exit
-            Choose an option: 
-            """;
+            Choose an option: """;
 
-    public static String getLogo() {
-        return Logo;
-    }
+    static String ledgerMenu = """
+         
+            A) Display All Transactions
+            D) Display Deposits
+            P) Display Payments
+            R) Reports
+            H) Home
+            
+            Choose an option: """;
+
+    static String reportsMenu = """
+         
+            1) Month to Date
+            2) Previous Month
+            3) Year to Date
+            4) Previous Year
+            5) Search by Vendor
+            0) Back
+            
+            Choose an option: """;
+
 
     public static String getMainMenu() {
         return mainMenu;
+    }
+
+    public static String getLedgerMenu() {
+        return ledgerMenu;
+    }
+
+    public static String getReportsMenu() {
+        return reportsMenu;
     }
 }
 

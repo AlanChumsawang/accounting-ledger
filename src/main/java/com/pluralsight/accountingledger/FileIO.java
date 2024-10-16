@@ -1,14 +1,16 @@
 package com.pluralsight.accountingledger;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class FileIO {
 
-    public static void readCSV(String filename) {
+    public static void readCSV() {
         try {
-            FileReader fileReader = new FileReader("transactions.csv");
+            FileReader fileReader = new FileReader("src/main/resources/transactions.csv");
             BufferedReader bufReader = new BufferedReader(fileReader);
-            String currentLine = bufReader.readLine();
+            String currentLine;
             while ( (currentLine = bufReader.readLine()) !=null){
                 String [] transactionInfo = currentLine.split("[|]");
                 String date = transactionInfo[0];
@@ -33,8 +35,8 @@ public class FileIO {
             BufferedWriter bufWriter = new BufferedWriter(fileWriter);
 
             bufWriter.write(
-                    transaction.getDate() + " | " + transaction.getTime() + " | " +
-                            transaction.getDescription() + " | " + transaction.getVendor() + " | " +
+                    transaction.getDate() + "|" + transaction.getTime() + "|" +
+                            transaction.getDescription() + "|" + transaction.getVendor() + "|" +
                             transaction.getAmount() + "\n");
             bufWriter.close();
         } catch (IOException e) {
