@@ -36,11 +36,16 @@ public class TransactionManager {
         System.out.print("Enter the vendor: ");
         String vendor = scanner.nextLine().trim();
         System.out.print("Enter the amount: ");
-        double amount = (scanner.nextDouble());
-        scanner.nextLine();
-        Transaction transaction = new Transaction(date, transactionTime, description, vendor, amount);
-        transactions.add(0, transaction);
-        FileIO.writeToCSV(transaction);
+        try {
+            double amount = (scanner.nextDouble());
+            scanner.nextLine();
+            Transaction transaction = new Transaction(date, transactionTime, description, vendor, amount);
+            transactions.add(0, transaction);
+            FileIO.writeToCSV(transaction);
+        }
+        catch (Exception e) {
+            System.out.println("Invalid input please enter a valid number (X.XX)");
+        }
     }
 
 
@@ -56,11 +61,16 @@ public class TransactionManager {
         System.out.print("Enter the vendor: ");
         String vendor = scanner.nextLine().trim();
         System.out.print("Enter the amount: ");
-        double amount = (scanner.nextDouble() * -1);
-        scanner.nextLine();
-        Transaction transaction = new Transaction(date, transactionTime, description, vendor, amount);
-        FileIO.writeToCSV(transaction);
-        transactions.add(0, transaction);
+        try {
+            double amount = (scanner.nextDouble() * -1);
+            scanner.nextLine();
+            Transaction transaction = new Transaction(date, transactionTime, description, vendor, amount);
+            FileIO.writeToCSV(transaction);
+            transactions.add(0, transaction);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Invalid input please enter a valid number (X.XX)");
+        }
     }
 
     public static void getAllTransactions() {

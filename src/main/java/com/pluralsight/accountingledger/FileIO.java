@@ -1,8 +1,6 @@
 package com.pluralsight.accountingledger;
 
 import java.io.*;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class FileIO {
 

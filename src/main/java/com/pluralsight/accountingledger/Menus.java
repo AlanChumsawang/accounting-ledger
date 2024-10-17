@@ -106,8 +106,6 @@ public class Menus {
                 System.out.println("Please enter a valid number.");
             }
         }
-
-
         Reports.customSearch(startDate, endDate, description, vendor, amount);
     }
 }
