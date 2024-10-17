@@ -8,7 +8,7 @@ public class Reports {
 
     public static void monthToDate() {
         for (Transaction transaction : transactions) {
-            if (transaction.getDate().split("-")[0].equals(TransactionManager.getDate().split("-")[1])) {
+            if (transaction.getDate().split("-")[1].equals(TransactionManager.getDate().split("-")[1])) {
                 TransactionManager.printTransaction(transaction);
             }
         }
@@ -24,7 +24,7 @@ public class Reports {
 
     public static void yearToDate() {
         for (Transaction transaction : transactions) {
-            if (transaction.getDate().split("-")[2].equals(TransactionManager.getDate().split("-")[0])) {
+            if (transaction.getDate().split("-")[0].equals(TransactionManager.getDate().split("-")[0])) {
                 TransactionManager.printTransaction(transaction);
             }
         }
@@ -55,7 +55,7 @@ public class Reports {
             if (!endDate.isEmpty() && transaction.getDate().compareTo(endDate) > 0) {
                 match = false;
             }
-            if (!description.isEmpty() && !transaction.getDescription().equalsIgnoreCase(description)) {
+            if (!description.isEmpty() && !transaction.getDescription().contains(description)) {
                 match = false;
             }
             if (amount != 0.0 && amount != transaction.getAmount()) {

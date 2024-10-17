@@ -1,6 +1,5 @@
 package com.pluralsight.accountingledger;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDateTime;
@@ -96,7 +95,7 @@ public class TransactionManager {
     }
 
     public static void printTransaction(Transaction transaction) {
-        System.out.println(transaction.getDate() + " | " + transaction.getTime() +  " | " +
+        System.out.println("\n" + transaction.getDate() + " | " + transaction.getTime() +  " | " +
                 transaction.getDescription() + " | " + transaction.getVendor() + " | " + transaction.getAmount());
     }
 

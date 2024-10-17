@@ -3,6 +3,7 @@
 ## Overview
 The Accounting Ledger is an app that allows users to track their deposits in withdrawals.
 Users can create custom queries to find specific charges in large datasets. 
+
 ## Features
 - Add deposits
 - Make payments (debits)
@@ -18,6 +19,7 @@ Users can create custom queries to find specific charges in large datasets.
     - Custom search
 
 ## Project Structure
+
 - `src/main/java/com/pluralsight/accountingledger/`
 - `FileIO.java`: Handles reading from and writing to the CSV file.
 - `LedgerApplication.java`: The main class of the application.
@@ -35,9 +37,7 @@ Users can create custom queries to find specific charges in large datasets.
 ### Implementing Multiple Filters in Java
 
 In the `Reports.java` file, the `customSearch` method practices implementing multiple filters when searching 
-through a list of transactions. This method allows users to filter transactions based on start date, end date, 
-description, vendor, and amount. The method searches through each transaction and checks if it matches all the provided
-criteria. If a transaction meets all the conditions, it is printed out.
+through a list of transactions.
 
 
 ![Alt text](images/customSearch.png)

@@ -2,6 +2,7 @@ package com.pluralsight.accountingledger;
 
 import java.util.Scanner;
 
+// Main Method
 public class LedgerApplication {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

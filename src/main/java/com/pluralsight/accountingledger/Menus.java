@@ -5,28 +5,31 @@ import java.util.Scanner;
 public class Menus {
 
     public static void ledgerMenu(Scanner scanner) {
-
-        System.out.print(Prompts.ledgerMenu);
-        String userChoice = scanner.nextLine().toUpperCase();
-        System.out.println("\n\n\n");
-        switch (userChoice) {
-            case "A":
-                TransactionManager.getAllTransactions();
-                break;
-            case "D":
-                TransactionManager.displayDeposits();
-                break;
-            case "P":
-                TransactionManager.displayPayments();
-                break;
-            case "R":
-                Menus.reportsMenu(scanner);
-                break;
-            case "H":
-                break;
-            default:
-                System.out.println("Invalid choice");
-
+        boolean done = false;
+        while (!done) {
+            System.out.print(Prompts.ledgerMenu);
+            String userChoice = scanner.nextLine().toUpperCase();
+            System.out.println("\n\n\n");
+            switch (userChoice) {
+                case "A":
+                    TransactionManager.getAllTransactions();
+                    break;
+                case "D":
+                    TransactionManager.displayDeposits();
+                    break;
+                case "P":
+                    TransactionManager.displayPayments();
+                    break;
+                case "R":
+                    Menus.reportsMenu(scanner);
+                    break;
+                case "H":
+                    done = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+                    break;
+            }
         }
     }
 
