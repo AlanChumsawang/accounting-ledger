@@ -55,6 +55,8 @@ public class Menus {
                     userChoice = scanner.nextLine();
                     Reports.searchByVendor(userChoice);
                     break;
+                case "6":
+                       customSearchMenu(scanner);
                 case "0":
                     done = true;
                     ledgerMenu(scanner);
@@ -85,7 +87,7 @@ public class Menus {
         return false;
     }
 
-    public static void customSearch(Scanner scanner) {
+    public static void customSearchMenu(Scanner scanner) {
         System.out.println("Enter the start date: ");
         String startDate = scanner.nextLine();
         System.out.println("Enter the end date: ");
@@ -93,10 +95,19 @@ public class Menus {
         System.out.println("Enter the description: ");
         String description = scanner.nextLine();
         System.out.println("Enter the vendor: ");
-        String vendor = scanner.nextLine();
+        String vendor = scanner.nextLine().trim();
         System.out.println("Enter the amount: ");
-        double amount = scanner.nextDouble();
-        scanner.nextLine();
+        String inputAmount = scanner.nextLine();
+        double amount = 0.0;
+        if (!inputAmount.isEmpty()) {
+            try {
+                amount = Double.parseDouble(inputAmount);
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.");
+            }
+        }
+
+
         Reports.customSearch(startDate, endDate, description, vendor, amount);
     }
 }

@@ -9,11 +9,11 @@ import java.time.format.DateTimeFormatter;
 public class TransactionManager {
     private static ArrayList<Transaction> transactions = new ArrayList<Transaction>();
     private static final LocalDateTime today = LocalDateTime.now();
-    private static final DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    private static final DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private static final DateTimeFormatter time = DateTimeFormatter.ofPattern("hh:mm");
     private static final String date = today.format(monthDayYear);
-    private static int month = Integer.parseInt(date.split("-")[0]);
-    private static int year = Integer.parseInt(date.split("-")[2]);
+    private static int month = Integer.parseInt(date.split("-")[1]);
+    private static int year = Integer.parseInt(date.split("-")[0]);
 
 
 

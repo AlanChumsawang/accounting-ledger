@@ -8,7 +8,7 @@ public class Reports {
 
     public static void monthToDate() {
         for (Transaction transaction : transactions) {
-            if (transaction.getDate().split("-")[0].equals(TransactionManager.getDate().split("-")[0])) {
+            if (transaction.getDate().split("-")[0].equals(TransactionManager.getDate().split("-")[1])) {
                 TransactionManager.printTransaction(transaction);
             }
         }
@@ -16,7 +16,7 @@ public class Reports {
 
     public static void previousMonth() {
         for (Transaction transaction : transactions) {
-            if ((TransactionManager.getMonth() - 1) == Integer.parseInt(transaction.getDate().split("-")[0])) {
+            if ((TransactionManager.getMonth() - 1) == Integer.parseInt(transaction.getDate().split("-")[1])) {
                 TransactionManager.printTransaction(transaction);
             }
         }
@@ -24,7 +24,7 @@ public class Reports {
 
     public static void yearToDate() {
         for (Transaction transaction : transactions) {
-            if (transaction.getDate().split("-")[2].equals(TransactionManager.getDate().split("-")[2])) {
+            if (transaction.getDate().split("-")[2].equals(TransactionManager.getDate().split("-")[0])) {
                 TransactionManager.printTransaction(transaction);
             }
         }
@@ -46,12 +46,25 @@ public class Reports {
         }
     }
 
-    public static void customSearch(String startDate, String endDate, String Description, String vendor, Double Amount) {
+    public static void customSearch(String startDate, String endDate, String description, String vendor, double amount) {
+        for (Transaction transaction : transactions) {
+            boolean match = true;
+            if (!startDate.isEmpty() && transaction.getDate().compareTo(startDate) < 0) {
+                match = false;
+            }
+            if (!endDate.isEmpty() && transaction.getDate().compareTo(endDate) > 0) {
+                match = false;
+            }
+            if (!description.isEmpty() && !transaction.getDescription().equalsIgnoreCase(description)) {
+                match = false;
+            }
+            if (amount != 0.0 && amount != transaction.getAmount()) {
+                match = false;
+            }
 
-
-
-
-
-
+            if (match) {
+                TransactionManager.printTransaction(transaction);
+            }
+        }
     }
 }

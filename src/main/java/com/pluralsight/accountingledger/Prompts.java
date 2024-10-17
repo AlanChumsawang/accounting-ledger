@@ -38,6 +38,7 @@ public class Prompts {
             3) Year to Date
             4) Previous Year
             5) Search by Vendor
+            6) Custom Search
             0) Back
             
             Choose an option: """;
