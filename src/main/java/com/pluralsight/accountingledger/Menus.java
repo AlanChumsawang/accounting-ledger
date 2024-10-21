@@ -4,10 +4,15 @@ import java.util.Scanner;
 
 public class Menus {
 
+    /*************************************************************
+     The following methods handle user input in the multiple menus presented to the user.
+     Based on the users input the methods either exit, throw errors or calls the class
+     for the desired outcome.
+     *************************************************************/
     public static void ledgerMenu(Scanner scanner) {
         boolean done = false;
         while (!done) {
-            System.out.print(Prompts.ledgerMenu);
+            System.out.print(Prompts.getLedgerMenu());
             String userChoice = scanner.nextLine().toUpperCase();
             System.out.println("\n\n\n");
             switch (userChoice) {

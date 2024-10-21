@@ -2,6 +2,11 @@ package com.pluralsight.accountingledger;
 
 public class Prompts {
 
+    /*************************************************************
+     The following variables contain the prompts for the Menus class,
+     each method returns a String that can be printed in the Menus
+     class using the appropriate getter.
+     *************************************************************/
     static String mainMenu = """
              __  __                          \s
             |  \\/  |_   _                    \s
@@ -43,7 +48,7 @@ public class Prompts {
             
             Choose an option: """;
 
-
+// getters
     public static String getMainMenu() {
         return mainMenu;
     }

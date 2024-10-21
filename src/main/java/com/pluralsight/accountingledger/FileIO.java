@@ -4,6 +4,13 @@ import java.io.*;
 
 public class FileIO {
 
+
+    /*************************************************************
+     Read current .csv parse through information and assigning the
+     relevant values to variables which are then passes to the Transaction
+     class to create a new Transaction instance which is then added to the
+     ArrayList "transactions" in Transaction Manager
+     *************************************************************/
     public static void readCSV() {
         try {
             FileReader fileReader = new FileReader("src/main/resources/transactions.csv");
@@ -25,7 +32,10 @@ public class FileIO {
             System.out.println("File not found");
         }
     }
-
+    /*************************************************************
+     Writes the passed transaction to the current csv file by
+     appending each value obtained through the getters.
+     *************************************************************/
     public static void writeToCSV(Transaction transaction) {
         // Write to CSV
         try {

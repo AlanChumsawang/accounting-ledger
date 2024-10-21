@@ -16,6 +16,9 @@ public class TransactionManager {
 
 
 
+    /*************************************************************
+     Getters
+     *************************************************************/
     public static int getMonth() {
         return month;
     }
@@ -28,6 +31,13 @@ public class TransactionManager {
         return date;
     }
 
+    public static ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    /*************************************************************
+     The following utilities are used to add, display, and query deposits and payments.
+     *************************************************************/
     public static void addDeposit(Scanner scanner) {
         String transactionTime = today.format(time);
         System.out.print("Enter the description: ");
@@ -41,8 +51,8 @@ public class TransactionManager {
             Transaction transaction = new Transaction(date, transactionTime, description, vendor, amount);
             transactions.add(0, transaction);
             FileIO.writeToCSV(transaction);
-        }
-        catch (Exception e) {
+            System.out.println("Deposit added");
+        } catch (Exception e) {
             System.out.println("Invalid input please enter a valid number (X.XX)");
         }
     }
@@ -66,8 +76,8 @@ public class TransactionManager {
             Transaction transaction = new Transaction(date, transactionTime, description, vendor, amount);
             FileIO.writeToCSV(transaction);
             transactions.add(0, transaction);
-        }
-        catch (NumberFormatException e) {
+            System.out.println("Payment added");
+        } catch (NumberFormatException e) {
             System.out.println("Invalid input please enter a valid number (X.XX)");
         }
     }
@@ -95,11 +105,9 @@ public class TransactionManager {
     }
 
     public static void printTransaction(Transaction transaction) {
-        System.out.println("\n" + transaction.getDate() + " | " + transaction.getTime() +  " | " +
+        System.out.println("\n" + transaction.getDate() + " | " + transaction.getTime() + " | " +
                 transaction.getDescription() + " | " + transaction.getVendor() + " | " + transaction.getAmount());
     }
 
-    public static ArrayList<Transaction> getTransactions() {
-        return transactions;
-    }
+
 }
