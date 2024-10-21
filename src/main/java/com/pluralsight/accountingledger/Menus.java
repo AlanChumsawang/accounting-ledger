@@ -67,7 +67,6 @@ public class Menus {
                        customSearchMenu(scanner);
                 case "0":
                     done = true;
-                    ledgerMenu(scanner);
             }
         }
 

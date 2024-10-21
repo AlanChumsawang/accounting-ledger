@@ -11,8 +11,8 @@ public class TransactionManager {
     private static final DateTimeFormatter monthDayYear = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private static final DateTimeFormatter time = DateTimeFormatter.ofPattern("hh:mm");
     private static final String date = today.format(monthDayYear);
-    private static int month = Integer.parseInt(date.split("-")[1]);
-    private static int year = Integer.parseInt(date.split("-")[0]);
+    private static final int month = Integer.parseInt(date.split("-")[1]);
+    private static final int year = Integer.parseInt(date.split("-")[0]);
 
 
 

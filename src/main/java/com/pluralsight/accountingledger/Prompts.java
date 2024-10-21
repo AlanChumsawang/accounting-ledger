@@ -7,7 +7,7 @@ public class Prompts {
      each method returns a String that can be printed in the Menus
      class using the appropriate getter.
      *************************************************************/
-    static String mainMenu = """
+    private static final String mainMenu = """
              __  __                          \s
             |  \\/  |_   _                    \s
             | |\\/| | | | |                   \s
@@ -26,7 +26,7 @@ public class Prompts {
             X) Exit
             Choose an option: """;
 
-    static String ledgerMenu = """
+    private static final String ledgerMenu = """
          
             A) Display All Transactions
             D) Display Deposits
@@ -36,7 +36,7 @@ public class Prompts {
             
             Choose an option: """;
 
-    static String reportsMenu = """
+    private static final String reportsMenu = """
          
             1) Month to Date
             2) Previous Month

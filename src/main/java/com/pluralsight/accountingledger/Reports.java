@@ -68,6 +68,9 @@ public class Reports {
             if (!description.isEmpty() && !transaction.getDescription().equalsIgnoreCase(description)) {
                 match = false;
             }
+            if (!vendor.isEmpty() && !transaction.getVendor().equalsIgnoreCase(vendor)) {
+                match = false;
+            }
             if (amount != 0.0 && amount != transaction.getAmount()) {
                 match = false;
             }
